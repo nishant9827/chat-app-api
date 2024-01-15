@@ -21,7 +21,7 @@ const server = app.listen(port,()=>{
 
 const io = socket(server,{
     cors:{
-        origin:"https://chat-app-lemon-five-15.vercel.app/",
+        origin:"https://chat-app-lemon-five-15.vercel.app",
         Credentials:true,
     }
 })
