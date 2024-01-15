@@ -1,5 +1,6 @@
-# Node.js
+# Ignore Node.js related files and folders
 node_modules/
+package-lock.json
 
-# Environment files
+# Ignore environment files
 .env
