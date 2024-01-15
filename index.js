@@ -10,6 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use('/',userRoute);
 app.use('/',messageRoute);
+app.get('/',(req,resp)=>{
+    resp.send('hello');
+})
 
 
 
