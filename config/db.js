@@ -2,12 +2,7 @@ const mongoose = require("mongoose");
 const dbUrl = process.env.MONGODBURL;
 
 mongoose
-  .connect(dbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    connectTimeoutMS: 30000,
-    socketTimeoutMS: 45000,
-  })
+  .connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -15,10 +10,4 @@ mongoose
     console.error("MongoDB connection error:", err);
   });
 
-const db = mongoose.connection;
-
-db.on("error", console.error.bind(console, "MongDb connection error"));
-db.once("open", () => {
-  console.log("Connected to MongoDb");
-});
 module.exports = mongoose;
