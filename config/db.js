@@ -2,7 +2,12 @@ const mongoose = require("mongoose");
 const dbUrl = process.env.MONGODBURL;
 
 mongoose
-  .connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    connectTimeoutMS: 30000,
+    socketTimeoutMS: 45000,
+  })
   .then(() => {
     console.log("Connected to MongoDB");
   })
